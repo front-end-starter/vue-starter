@@ -32,3 +32,12 @@
 **"postcss-cssnext": "2.8.*",**  _// postcss cssnext 插件_  
 **"pug": "2.0.0-beta6",**  _// Pug(Jade) 模板引擎_  
 **"normalize.css": "4.2.*"**  _// 样式初始化(非必要,可选)_
+
+`编译`
+```
+// 开发环境
+npm run dev
+
+// 生产环境
+npm run build
+```
