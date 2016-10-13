@@ -22,7 +22,7 @@
 **"babel-preset-stage-2": "6.16.*",**
 > 
 **"vue": "2.0.*",**  _// Vue 框架_  
-**"vue-router": "2.0.*",**  _// Vue 路由组建_  
+**"vue-router": "2.0.*",**  _// Vue 路由组件_  
 **"vuex": "2.0.*",**  _// Vue 集中式状态管理架构_
 > 
 **"vue-loader": "9.5.*",**  _// webpack Vue 加载器_  
