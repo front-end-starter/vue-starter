@@ -15,25 +15,25 @@
 `插件简介`
 > 
 **"webpack": "2.1.0-beta.22",**  _// 2.1.0-beta.23版本以上编译会报错,暂不升级_  
-**"webpack-livereload-plugin": "0.8.*",**  _// 浏览器自动刷新_
+**"webpack-livereload-plugin": "0.9.*",**  _// 浏览器自动刷新_
 >
-**"babel-core": "6.16.*",**  
-**"babel-preset-es2015": "6.16.*",**  
-**"babel-preset-stage-2": "6.16.*",**
+**"babel-core": "6.18.*",**  
+**"babel-preset-es2015": "6.18.*",**  
+**"babel-preset-stage-2": "6.18.*",**
 > 
 **"vue": "2.0.*",**  _// Vue 框架_  
 **"vue-router": "2.0.*",**  _// Vue 路由组件_  
 **"vuex": "2.0.*",**  _// Vue 集中式状态管理架构_
 > 
-**"vue-loader": "9.5.*",**  _// webpack Vue 加载器_  
+**"vue-loader": "9.9.*",**  _// webpack Vue 加载器_  
 **"babel-loader": "6.2.*",**  _// webpack babel 加载器_  
 **"style-loader": "0.13.*",**  _// webpack style 加载器(将CSS样式以`style`标签形式插入到文档)_  
-**"css-loader": "0.25.*",**  _// webpack css 加载器(处理CSS文件中的url()等)_  
-**"postcss-loader": "0.13.*",**  _// webpack postcss 加载器_
+**"css-loader": "0.26.*",**  _// webpack css 加载器(处理CSS文件中的url()等)_  
+**"postcss-loader": "1.1.*",**  _// webpack postcss 加载器_
 > 
 **"postcss-cssnext": "2.8.*",**  _// postcss cssnext 插件_  
 **"pug": "2.0.0-beta6",**  _// Pug(Jade) 模板引擎_  
-**"normalize.css": "4.2.*"**  _// 样式初始化(非必要,可选)_
+**"normalize.css": "5.0.*"**  _// 样式初始化(非必要,可选)_
 
 `编译`
 ```
