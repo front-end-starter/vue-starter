@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import App from './App';
+import App from './app';
 
 __webpack_public_path__ = WEBPACK_PUBLIC_PATH;
 
@@ -13,7 +13,7 @@ let router = new VueRouter({
 			path: '/',
 			name: 'home',
 			component: (resolve) => {
-				require(['Pages/Home'], resolve);
+				require(['Pages/home'], resolve);
 			}
 		},
 
@@ -21,7 +21,7 @@ let router = new VueRouter({
 			path: '/about',
 			name: 'about',
 			component: (resolve) => {
-				require(['Pages/About'], resolve);
+				require(['Pages/about'], resolve);
 			}
 		}
 	]

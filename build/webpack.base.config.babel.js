@@ -11,42 +11,35 @@ export default {
 	},
 
 	resolve: {
-		extensions: ['', '.js', '.vue'],
+		modules: ['node_modules'],
+
+		extensions: ['.js', '.vue'],
+
 		alias: {
-			'Components': path.resolve(__dirname, '../src/Components'),
-			'Directives': path.resolve(__dirname, '../src/Directives'),
-			'Pages': path.resolve(__dirname, '../src/Pages'),
-			'Store': path.resolve(__dirname, '../src/Stores')
+			'Components': path.resolve(__dirname, '../src/components'),
+			'Directives': path.resolve(__dirname, '../src/directives'),
+			'Pages': path.resolve(__dirname, '../src/pages'),
+			'Store': path.resolve(__dirname, '../src/store')
 		}
 	},
 
-	resolveLoader: {
-		root: path.join(__dirname, 'node_modules'),
-	},
-
 	module: {
-		loaders: [
-			{test: /\.vue$/, loader: 'vue'},
-			{test: /\.js$/, loader: 'babel', exclude: /node_modules/},
+		rules: [
 			{
-				test: /\.(png|jpg|gif|svg)$/,
-				loader: 'file',
-				query: {
-					name: '[name].[ext]?[hash]'
+				test: /\.vue$/,
+				loader: 'vue-loader',
+				options: {
+					loaders: {
+						css: 'style-loader!css-loader?-autoprefixer!postcss-loader'
+					},
+					postcss: [require('postcss-cssnext')]
 				}
+			},
+			{
+				test: /\.js$/,
+				loader: 'babel-loader',
+				exclude: /node_modules/
 			}
-		]
-	},
-
-	vue: {
-		loaders: {
-			css: 'style!css?-autoprefixer!postcss'
-		},
-
-		postcss: [
-			require('postcss-cssnext')({
-				browsers: ['last 2 versions']
-			})
 		]
 	}
 };
