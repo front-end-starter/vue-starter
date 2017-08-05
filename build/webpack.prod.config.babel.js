@@ -1,29 +1,32 @@
-import webpack from 'webpack';
-import config from './webpack.base.config.babel';
+import Webpack from 'webpack';
+import Merge from 'webpack-merge';
+import CommonConfig from './webpack.common.config.babel';
 
-config.devtool = '#source-map';
+export default function (env) { return Merge(CommonConfig, {
+	plugins: [
+		// this allows uglify to strip all warnings
+		// from Vue.js source code.
+		new Webpack.DefinePlugin({
+			'process.env': {
+				NODE_ENV: '"production"'
+			}
+		}),
 
-config.plugins = (config.plugins || []).concat([
-	// this allows uglify to strip all warnings
-	// from Vue.js source code.
-	new webpack.DefinePlugin({
-		'process.env': {
-			NODE_ENV: '"production"'
-		}
-	}),
+		// This minifies not only JavaScript, but also
+		// the templates (with html-minifier) and CSS (with cssnano)!
+		new Webpack.optimize.UglifyJsPlugin({
+			sourceMap: true,
+			compress: {
+				warnings: false
+			}
+		}),
 
-	// This minifies not only JavaScript, but also
-	// the templates (with html-minifier) and CSS (with cssnano)!
-	new webpack.optimize.UglifyJsPlugin({
-		sourceMap: true,
-		compress: {
-			warnings: false
-		}
-	}),
+		new Webpack.optimize.ModuleConcatenationPlugin(),
 
-	new webpack.LoaderOptionsPlugin({
-		minimize: true
-	})
-]);
+		new Webpack.LoaderOptionsPlugin({
+			minimize: true
+		})
+	],
 
-export default config;
+	devtool: 'source-map'
+}); };

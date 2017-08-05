@@ -1,22 +1,23 @@
 import path from 'path';
-import config from './webpack.base.config.babel';
+import Merge from 'webpack-merge';
+import CommonConfig from './webpack.common.config.babel';
 import LiveReloadPlugin from 'webpack-livereload-plugin';
 
-config.devtool = '#eval-source-map';
+export default function (env) { return Merge(CommonConfig, {
+	output: {
+		path: path.resolve(__dirname, '../public/assets/scripts/dev'),
+		publicPath: '/assets/scripts/dev/',
+		filename: '[name].js'
+	},
 
-config.output = {
-	path: path.resolve(__dirname, '../public/assets/scripts/dev'),
-	publicPath: '/assets/scripts/dev/',
-	filename: '[name].js'
-};
+	devServer: {
+		historyApiFallback: true,
+		noInfo: true
+	},
 
-config.devServer = {
-	historyApiFallback: true,
-	noInfo: true
-};
+	plugins: [
+		new LiveReloadPlugin()
+	],
 
-config.plugins = (config.plugins || []).concat([
-	new LiveReloadPlugin()
-]);
-
-export default config;
+	devtool: 'eval-source-map'
+}); };

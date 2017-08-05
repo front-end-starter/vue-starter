@@ -1,5 +1,4 @@
 import path from 'path';
-import webpack from 'webpack';
 
 export default {
 	entry: './src/main.js',
@@ -30,9 +29,9 @@ export default {
 				loader: 'vue-loader',
 				options: {
 					loaders: {
-						css: 'style-loader!css-loader?-autoprefixer!postcss-loader'
+						css: 'vue-style-loader!css-loader?-autoprefixer!postcss-loader?sourceMap=inline'
 					},
-					postcss: [require('postcss-cssnext')]
+					postcss: [require('postcss-cssnext')()]
 				}
 			},
 			{
