@@ -12,17 +12,13 @@ let router = new VueRouter({
 		{
 			path: '/',
 			name: 'home',
-			component: (resolve) => {
-				require(['Pages/home'], resolve);
-			}
+			component: () => import('Pages/home')
 		},
 
 		{
 			path: '/about',
 			name: 'about',
-			component: (resolve) => {
-				require(['Pages/about'], resolve);
-			}
+			component: () => import('Pages/about')
 		}
 	]
 });

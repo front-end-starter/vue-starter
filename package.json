@@ -1,35 +1,42 @@
 {
 	"name": "vue-demo",
-	"version": "0.3.1",
-	"description": "",
+	"version": "0.4.0",
+	"description": "vue demo",
 	"author": "MyItStudy",
 
 	"scripts": {
-		"dev": "webpack --progress --watch --hide-modules --colors --config build/webpack.dev.config.babel.js",
-		"build": "webpack --progress --hide-modules --colors --config build/webpack.prod.config.babel.js"
+		"dev": "webpack-cli --mode development --env.NODE_ENV=development --progress --watch --hide-modules --colors --config build/webpack.dev.config.babel.js",
+		"build": "webpack-cli --mode production --env.NODE_ENV=production --cache=false --progress --hide-modules --colors --config build/webpack.prod.config.babel.js"
 	},
 
 	"devDependencies": {
-		"webpack": "3.4.*",
+		"webpack": "4.16.*",
+		"webpack-cli": "3.0.*",
 		"webpack-merge": "4.1.*",
-		"webpack-livereload-plugin": "0.11.*",
+		"webpack-livereload-plugin": "2.1.*",
 
-		"babel-core": "6.25.*",
-		"babel-preset-latest": "6.24.*",
+		"@babel/core": "~7.0.0-beta",
+		"@babel/preset-env": "~7.0.0-beta",
+		"@babel/register": "~7.0.0-beta",
+		"@babel/plugin-syntax-dynamic-import": "~7.0.0-beta",
 
-		"vue": "2.4.*",
-		"vue-template-compiler": "2.4.*",
-		"vue-router": "2.7.*",
-		"vuex": "2.3.*",
+		"vue": "2.5.*",
+		"vue-template-compiler": "2.5.*",
+		"vue-router": "3.0.*",
+		"vuex": "3.0.*",
 
-		"vue-loader": "13.0.*",
-		"babel-loader": "7.1.*",
-		"vue-style-loader": "3.0.*",
-		"css-loader": "0.28.*",
-		"postcss-loader": "2.0.*",
+		"vue-loader": "15.2.*",
+		"babel-loader": "~8.0.0-beta",
+		"css-loader": "1.0.*",
+		"postcss-loader": "2.1.*",
+		"pug-plain-loader": "1.0.*",
 
-		"postcss-cssnext": "3.0.*",
-		"pug": "2.0.0-rc.3",
-		"normalize.css": "7.0.*"
-	}
+		"postcss-preset-env": "5.2.*",
+		"pug": "2.0.*",
+		"normalize.css": "8.0.*"
+	},
+
+	"browserslist": [
+		"last 2 versions"
+	]
 }

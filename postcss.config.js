@@ -1,15 +1,12 @@
 module.exports = (ctx) => ({
 	plugins: {
-		'postcss-cssnext': {
-			browsers: ['last 2 versions'],
+		'postcss-preset-env': {
+			stage: 0,
 
 			features: {
-				customProperties: {
+				'custom-properties': {
+					preserve: false,
 					variables: {}
-				},
-
-				rem: {
-					rootValue: '100px'
 				}
 			}
 		}

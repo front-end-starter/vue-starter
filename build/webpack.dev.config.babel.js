@@ -5,14 +5,9 @@ import LiveReloadPlugin from 'webpack-livereload-plugin';
 
 export default function (env) { return Merge(CommonConfig, {
 	output: {
-		path: path.resolve(__dirname, '../public/assets/scripts/dev'),
-		publicPath: '/assets/scripts/dev/',
+		path: path.resolve(__dirname, '../public/assets-dev/scripts'),
+		publicPath: '/assets-dev/scripts/',
 		filename: '[name].js'
-	},
-
-	devServer: {
-		historyApiFallback: true,
-		noInfo: true
 	},
 
 	plugins: [
