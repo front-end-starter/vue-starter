@@ -10,42 +10,38 @@
 **`MyItStudy:`** [_**Vue Demo**_](https://my.oschina.net/MyItStudy/blog/754367)
 
 `插件简介`
-> **"webpack": "4.16.*",**  _// webpack打包工具_  
-> **"webpack-cli": "3.0.*",**  _// webpack命令行工具_  
-> **"webpack-merge": "4.1.*",**  _// 合并函数_  
-> **"webpack-livereload-plugin": "2.1.*",**  _// 浏览器自动刷新_  
+> **webpack**  _// webpack打包工具_  
+> **webpack-cli**  _// webpack命令行工具_  
+> **webpack-merge**  _// 数据合并_  
+> **webpack-livereload-plugin**  _// 浏览器自动刷新_  
 >
-> **"@babel/core": "~7.0.0-beta",**  _// babel核心_  
-> **"@babel/preset-env": "~7.0.0-beta",**  _// JavaScript环境预设_  
-> **"@babel/register": "~7.0.0-beta",**  _// require hook_  
-> **"@babel/plugin-syntax-dynamic-import": "~7.0.0-beta",**  _// import 动态加载_  
+> **@babel/core**  _// babel核心_  
+> **@babel/preset-env**  _// JavaScript环境预设_  
+> **@babel/register**  _// require hook_  
+> **@babel/plugin-syntax-dynamic-import**  _// import 动态加载_  
 >
-> **"vue": "2.5.*",**  _// Vue 框架_  
-> **"vue-template-compiler": "2.5.*",**  _// Vue 模板编译器_  
-> **"vue-router": "3.0.*",**  _// Vue 路由组件_  
-> **"vuex": "3.0.*",**  _// Vue 集中式状态管理架构_  
+> **vue**  _// Vue 框架_  
+> **vue-template-compiler**  _// Vue 模板编译器_  
+> **vue-router**  _// Vue 路由组件_  
+> **vuex**  _// Vue 集中式状态管理架构_  
 >
-> **"vue-loader": "15.2.*",**  _// webpack Vue 加载器_  
-> **"babel-loader": "~8.0.0-beta",**  _// webpack babel 加载器_  
-> **"css-loader": "1.0.*",**  _// webpack css 加载器(处理CSS文件中的url()等)_  
-> **"postcss-loader": "2.1.*",**  _// webpack postcss 加载器_  
-> **"pug-plain-loader": "1.0.*"**  _// webpack Pug 加载器_  
+> **vue-loader**  _// webpack Vue 加载器_  
+> **babel-loader**  _// webpack babel 加载器_  
+> **css-loader**  _// webpack css 加载器_  
+> **postcss-loader**  _// webpack postcss 加载器_  
+> **pug-plain-loader**  _// webpack Pug 加载器_  
 >
-> **"postcss-preset-env": "5.2.*",**  _// css预设_  
-> **"pug": "2.0.*",**  _// Pug 模板引擎_  
-> **"normalize.css": "8.0.*"**  _// 样式初始化(非必要,可选)(如未安装次插件请删除`/src/app.vue`中的导入代码)_  
+> **postcss-preset-env**  _// css预设_  
+> **pug**  _// Pug 模板引擎_  
+> **normalize.css**  _// 样式初始化(非必要,可选)(如未安装次插件请删除`/src/app.vue`中的导入代码)_  
 
 `编译`
 ```
 // 开发环境
 yarn run dev  
-或
-npm run dev
 
 // 生产环境
 yarn run build  
-或
-npm run build
 ```
 
 `运行`

@@ -1,18 +1,28 @@
 import path from 'path';
-import Merge from 'webpack-merge';
-import CommonConfig from './webpack.common.config.babel';
+import WebpackMerge from 'webpack-merge';
 import LiveReloadPlugin from 'webpack-livereload-plugin';
+import common_config from './webpack.common.config.babel';
 
-export default function (env) { return Merge(CommonConfig, {
+const config = WebpackMerge(common_config, {
+	mode: 'development',
+
+	devtool: 'cheap-module-source-map',
+
+	watch: true,
+	watchOptions: {
+		ignored: /node_modules/
+	},
+
 	output: {
 		path: path.resolve(__dirname, '../public/assets-dev/scripts'),
 		publicPath: '/assets-dev/scripts/',
-		filename: '[name].js'
+		filename: '[name].js',
+		chunkFilename: '[name].js'
 	},
 
 	plugins: [
 		new LiveReloadPlugin()
-	],
+	]
+});
 
-	devtool: 'eval-source-map'
-}); };
+export default config;

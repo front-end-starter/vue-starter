@@ -1,12 +1,41 @@
+import path from 'path';
 import Webpack from 'webpack';
-import Merge from 'webpack-merge';
-import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
-import CommonConfig from './webpack.common.config.babel';
+import WebpackMerge from 'webpack-merge';
+import TerserPlugin from 'terser-webpack-plugin';
+import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
+import common_config from './webpack.common.config.babel';
 
-export default function (env) { return Merge(CommonConfig, {
-	plugins: [
-		new UglifyJsPlugin({
-			parallel: true
-		})
-	]
-}); };
+const config = WebpackMerge(common_config, {
+	mode: 'production',
+
+	output: {
+		path: path.resolve(__dirname, '../public/assets/scripts'),
+		publicPath: '/assets/scripts/',
+		filename: '[name].min.js',
+		chunkFilename: '[name].[chunkhash].min.js'
+	},
+
+	optimization: {
+		minimizer: [
+			new TerserPlugin({
+				parallel: true,
+				sourceMap: false,
+			}),
+
+			new OptimizeCssAssetsPlugin({
+				cssProcessorPluginOptions: {
+					preset: [
+						'default',
+						{
+							discardComments: {
+								removeAll: true
+							}
+						}
+					]
+				}
+			})
+		]
+	}
+});
+
+export default config;

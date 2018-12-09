@@ -1,14 +1,8 @@
 import path from 'path';
 import VueLoaderPlugin from 'vue-loader/lib/plugin';
 
-export default {
+const config = {
 	entry: './src/main.js',
-
-	output: {
-		path: path.resolve(__dirname, '../public/assets/scripts'),
-		publicPath: '/assets/scripts/',
-		filename: '[name].min.js'
-	},
 
 	resolve: {
 		modules: [
@@ -70,3 +64,5 @@ export default {
 		new VueLoaderPlugin()
 	]
 };
+
+export default config;

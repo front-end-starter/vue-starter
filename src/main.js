@@ -12,13 +12,19 @@ let router = new VueRouter({
 		{
 			path: '/',
 			name: 'home',
-			component: () => import('Pages/home')
+			component: () => import(
+				/* webpackChunkName: 'page-home' */
+				'Pages/home'
+			)
 		},
 
 		{
 			path: '/about',
 			name: 'about',
-			component: () => import('Pages/about')
+			component: () => import(
+				/* webpackChunkName: 'page-about' */
+				'Pages/about'
+			)
 		}
 	]
 });
